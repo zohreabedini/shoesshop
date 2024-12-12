@@ -1,5 +1,7 @@
 
 import { El } from "../../utils/createelement";
+import { Onboarding2 } from "./onboarding2";
+import {ChangPage1} from "../../utils/changeonboardingspages/changepag1"
 export function Onboarding1() {
     const el = El({
         element: "div",
@@ -25,10 +27,13 @@ export function Onboarding1() {
                     El({ element: "div", className: "w-8	h-1 bg-zinc-700	mx-3" })]
                 }),
                 El({
-                    element:"a",
+                    element:"button",
                     innerText:"Next",
-                    className:"w-96 h-12 bg-gray-950 text-white	rounded-full	",
-
+                    id:"#next-btn1",
+                    className:"w-96 h-12 bg-gray-950 text-white	rounded-full 	",
+                    eventListener:[
+                        {event:"click",callback:(event)=>{ ChangPage1()}}
+                    ]
                 })
 
             ]
@@ -36,3 +41,4 @@ export function Onboarding1() {
     })
     return el
 }
+

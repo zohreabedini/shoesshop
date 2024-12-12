@@ -1,8 +1,10 @@
 
 
 import { El } from "../../utils/createelement";
+import { Homepage1 } from "../../pages/Home/page1";
+import { router } from "../../main";
 export function Welcome(){
-    const text=El({
+    const welcome=El({
         element:"div",
         className:"bg-cover ",
         style:"background-image:url('shoes.jfif')",
@@ -30,5 +32,7 @@ export function Welcome(){
     })]
         })]
     })
-    return text;
+    setTimeout(()=>router.navigate("/products"),2000)
+    
+    return welcome;
 }

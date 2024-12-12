@@ -1,4 +1,5 @@
 import { El } from "../../utils/createelement";
+import {Userdata} from "../../utils/login/users.data"
 export function LoginUser() {
     const form = El({
         element: "div", //فرم  ورود
@@ -10,8 +11,8 @@ export function LoginUser() {
                 innerText: "Login to Your Account",
                 className: "text-4xl	font-semibold ml-10 mt-72 mb-7	"
             }),
-            El({  //ورودی ایمیل
-                element: "div", 
+            El({   //ورودی ایمیل
+                element: "div",
                 className: "flex flex-row  items-center	 m-4  h-[27px] 	 ",
                 children: [
                     El({
@@ -19,16 +20,17 @@ export function LoginUser() {
                         src: "icons/mail.png",
                         className: "size-12 opacity-50	",
                     }),
-                    El({  //ورودی پسوورد
-                        element: "input", 
-                        type: "password",
+                    El({  
+                        element: "input",
+                        type: "email",
+                        id:"email",
                         placeholder: "Email",
                         className: "w-80 outline-black		 "
 
                     })
                 ]
             }),
-            El({
+            El({   //ورودی پسوورد
                 element: "div",
                 className: "flex flex-row  items-center	 m-4  h-[27px] 	 ",
                 children: [
@@ -39,7 +41,8 @@ export function LoginUser() {
                     }),
                     El({
                         element: "input",
-                        type: "email",
+                        type: "password",
+                        id:"password",
                         placeholder: "Password",
                         className: "w-80 outline-black		 "
 
@@ -68,11 +71,14 @@ export function LoginUser() {
                 ]
             }),
             El({  //دکمه ی ثبت
-                element:"input",
-                className:"w-[380px] h-[47px] bg-black	rounded-full ml-7 mt-44 text-white	",
-                type:"button",
-                value:"Sing In"
+                element: "input",
+                className: "w-[380px] h-[47px] bg-black	rounded-full ml-7 mt-44 text-white	",
+                type: "button",
+                value: "Sing In",
+                eventListener: [
 
+                    { event: "click", callback: (event) => { Userdata() } }
+                ]
 
             })
 

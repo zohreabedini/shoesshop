@@ -1,8 +1,10 @@
  import{El} from "../utils/createelement"
-
+import { getproduct } from "../pages/Home/select.product"
  export function ProductCard(product){
-
-    return El({element:"div",children:[
+   let id=product.id;
+    return El({element:"div",
+        eventListener:[{event:"click",callback:(event)=>{getproduct(id)}}],
+        children:[
             El({element:"img",
                 src:`${product.images}`  
                 ,className:"size-32"}),

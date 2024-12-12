@@ -1,6 +1,7 @@
 import { El } from "../../utils/createelement";
+import { router } from "../../main";
 export function Loading() {
-    const text = El({
+    const loading = El({
         element: "div",
         className: "flex flex-col items-center	mt-96",
         children: [El(
@@ -27,6 +28,6 @@ className:"size-14 mt-56 animate-spin",
             })]
     })
 
-
-    return text;
+setTimeout(()=>router.navigate("/welcome"),3000)
+    return loading;
 }

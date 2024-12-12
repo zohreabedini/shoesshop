@@ -1,5 +1,6 @@
 
 import { El } from "../../utils/createelement";
+import { ChangPage3 } from "./changpag3";
 export function Onboarding3() {
     const el = El({
         element: "div",
@@ -26,8 +27,10 @@ export function Onboarding3() {
                 El({
                     element:"button",
                     innerText:"Next",
-                    className:"w-96 h-12 bg-gray-950 text-white	rounded-full	"
-
+                    className:"w-96 h-12 bg-gray-950 text-white	rounded-full	",
+                    eventListener:[
+                        {event:"click",callback:(event)=>{ ChangPage3()}}
+                    ]
                 })
 
             ]
